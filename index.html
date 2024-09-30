@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAPs- The CMS Team</title>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <!-- Linking Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Custom Styles -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #2E8B57;
+        }
+        .navbar-brand, .nav-link, .footer {
+            color: #fff !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('/360_F_816841926_wH34DcFqMhRRLGP68A02zf5MRThM809H.jpg'); /* Path to your local image */
+            background-size: cover;
+            background-position: center;
+            color: black;
+            padding: 100px 0;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            margin: 40px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #2E8B57;
+            margin: 10px auto;
+        }
+
+        /* Box Style for Sections */
+        .box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* QR Scanner Section */
+        #qr-reader {
+            margin: 0 auto;
+            max-width: 400px;
+            border: 2px solid #2E8B57;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f5eb;
+            border: 1px solid #2E8B57;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #2E8B57;
+            color: white;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2E8B57;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">The CMS Team</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#problem">Problem Statement</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#solution">Proposed Solution</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#method">Method</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>SAPs</h1>
+            <p>A low-cost, biodegradable SAPs out of orange peel and avocado peel.</p>
+            <p><strong>Team Name:</strong> The CMS</p>
+            <p><strong>Team Leader:</strong> Sakshi Srivastava</p>
+            <p><strong>Member:</strong> Akriti Srivastava</p>
+            <p><strong>Theme:</strong> Agriculture</p>
+        </div>
+    </section>
+
+    <!-- QR Code Scanner Section -->
+    <section id="scanner" class="container">
+        <h2 class="section-title">Scan Your Soil Type</h2>
+        <div id="qr-reader"></div>
+        <div id="result"></div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section id="problem" class="container">
+        <h2 class="section-title">Problem Statement</h2>
+        <div class="box">
+            <p>
+                The innovative approach of leveraging nanotechnology to create biodegradable superabsorbent polymers (SAPs) 
+                from natural sources, such as orange peels and chitosan from shrimp shells, presents a promising solution 
+                to address water scarcity in Indian agriculture.
+            </p>
+        </div>
+    </section>
+
+    <!-- Proposed Solution -->
+    <section id="solution" class="container">
+        <h2 class="section-title">Proposed Solution</h2>
+        <div class="box">
+            <p>
+                The solution of creating a low-cost, biodegradable superabsorbent polymer (SAP) from orange peels 
+                presents a groundbreaking approach to address water conservation and food security challenges in India.
+            </p>
+        </div>
+    </section>
+
+    <!-- Method Section with Table -->
+    <section id="method" class="container">
+        <h2 class="section-title">Method</h2>
+        <div class="box">
+            <table>
+                <tr>
+                    <th>Step</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Step 1</td>
+                    <td>Peel three full oranges, add lemon juice, and leave for 1 hour.</td>
+                </tr>
+                <tr>
+                    <td>Step 2</td>
+                    <td>Boil the peels with water, dry them, and combine with avocado skin.</td>
+                </tr>
+                <tr>
+                    <td>Step 3</td>
+                    <td>Dry the mixture for 14 days, then crush into powder.</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" class="container">
+        <h2 class="section-title">Conclusion</h2>
+        <div class="box">
+            <p>
+                Superabsorbent polymers improve soil water retention. The orange peel SAP offers an eco-friendly, 
+                cost-effective solution that benefits agriculture in drought-prone areas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 The CMS Team | National Hackathon Hackverse 2024</p>
+    </footer>
+
+    <!-- QR Code Scanner Script -->
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // Stop scanning after successful scan
+            html5QrcodeScanner.clear();
+
+            let resultDiv = document.getElementById('result');
+
+            if(decodedText === 'Q1'){
+                resultDiv.innerHTML = `
+                    <h3>Normal Soil</h3>
+                    <p><strong>Disadvantages:</strong> Normal soil cannot retain water effectively, leading to increased irrigation needs.</p>
+                `;
+            } else if(decodedText === 'Q2'){
+                resultDiv.innerHTML = `
+                    <h3>SAPs Soil</h3>
+                    <p><strong>Advantages:</strong> SAPs retain water efficiently, reduce irrigation frequency, and enhance plant growth.</p>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <h3>Unknown Soil</h3>
+                    <p>No information available for this soil type.</p>
+                `;
+            }
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
