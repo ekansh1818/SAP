@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Soil Type Detector</title>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #qr-reader {
+            margin: 0 auto;
+            width: 500px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        h2 {
+            color: #2E8B57;
+        }
+        p {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Soil Type Detector</h1>
+    <div id="qr-reader"></div>
+    <div id="result"></div>
+
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // Stop scanning after successful scan
+            html5QrcodeScanner.clear();
+            
+            let resultDiv = document.getElementById('result');
+            
+            if(decodedText === 'Q1'){
+                resultDiv.innerHTML = `
+                    <h2>Normal Soil</h2>
+                    <p><strong>Disadvantages:</strong> Normal soil cannot retain water effectively, leading to increased irrigation needs and potential drought stress for plants. It may also have poor nutrient retention, requiring more frequent fertilization.</p>
+                `;
+            } else if(decodedText === 'Q2'){
+                resultDiv.innerHTML = `
+                    <h2>SAPs Soil</h2>
+                    <p><strong>Advantages:</strong> SAPs (Super Absorbent Polymers) soil retains water efficiently, reducing the frequency of irrigation. It enhances nutrient absorption, promotes better plant growth, and improves soil structure.</p>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <h2>Unknown QR Code</h2>
+                    <p>The scanned QR code is not recognized. Please try again with a valid QR code.</p>
+                `;
+            }
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", 
+            { fps: 10, qrbox: 250 }
+        );
+        html5QrcodeScanner.render(onScanSuccess);
+    </script>
+
+</body>
+</html>
